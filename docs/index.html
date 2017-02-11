@@ -151,14 +151,6 @@ $ ctags --languages=php -f /output/path/hoge.tags /project/path/hoge
 <center>
     ![インデックスファイル例](https://kazuakim.github.io/img/tags01.png)
 </center>
-
----
-
-e.g. Vim.
-- - -
-<center>
-    ![使用例](https://kazuakim.github.io/img/tags04.gif)
-</center>
                     </script>
                 </section>
                 <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n"
@@ -171,6 +163,14 @@ ctagsとの比較画像
                 </section>
                 <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n">
                     <script type="text/template">
+e.g. Vim.
+- - -
+<center>
+    ![使用例](https://kazuakim.github.io/img/tags04.gif)
+</center>
+
+---
+
 まとめ
 - - -
 ## 動作が軽快!!
@@ -218,7 +218,7 @@ ctagsとの比較画像
             });
 
             Reveal.addEventListener("slidechanged", function(event) {
-                if ([0, 2, 5].indexOf(Reveal.getState().indexh) >= 0) {
+                if ([0, 2, 5, 13].indexOf(Reveal.getState().indexh) >= 0) {
                     Reveal.configure({
                         center: true
                     });
