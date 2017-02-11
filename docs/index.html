@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Universal Ctags</title>
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <style type="text/css">
+            .reveal .slides {
+                text-align: left;
+            }
+            p.center {
+                text-align: center;
+            }
+            font.gray {
+                color: gray;
+                font-size: 15px;
+            }
+        </style>
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n">
+                    <script type="text/template">
+Universal CtagsとPHP  
+PHP BLT #6
+
+---
+
+自己紹介
+- - -
+* Name: Kazuaki Mabuchi
+* Twitter: [KazuakiM@NanohaAsOnKai](https://twitter.com/NanohaAsOnKai)
+* GitHub: [KazuakiM](https://github.com/KazuakiM)
+* Jobs: Web application engineer
+* kwsk: [ここをクリック](https://kazuakim.github.io/aboutme/)
+
+---
+
+Universal Ctagsって何?
+
+---
+
+Universal Ctagsとは
+
+- - -
+```
+ctagsからの派生であるExuberant Ctags、
+その後継にあたるのがUniversal Ctagsです。
+```
+<br />
+ctagsとは
+- - -
+```
+変数、関数などのインデックスを生成するプログラムです。
+多くの言語に対応しており、多くのテキストエディタがサポートしてます。
+```
+<br />
+<center>
+    今からctagsを使うのであれば、  
+    Universal Ctagsがおすすめです。
+</center>
+                    </script>
+                </section>
+                <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n"
+                    data-background="https://kazuakim.github.io/img/tags03.png"
+                    data-background-size="500px">
+                    <script type="text/template">
+サポート言語/形式
+- - -
+                    </script>
+                </section>
+                <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n">
+                    <script type="text/template">
+実例の前に🍻
+
+---
+
+Install方法
+- - -
+*Mac*
+```
+$ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+```
+*Windows*
+* [universal ctagsをビルドする - Qiita](http://qiita.com/k-takata/items/4fba75b66b2cff3a02c7)
+* [windows.rst](https://github.com/universal-ctags/ctags/blob/master/docs/windows.rst)
+
+*Linux など、Autotoolsベースプロジェクト*
+* [autotools.rst](https://github.com/universal-ctags/ctags/blob/master/docs/autotools.rst)
+
+---
+
+設定ファイル例
+- - -
+ctagsでは多々設定が必要でしたが、  
+Universal Ctagsならほぼ不要です。
+<br />
+<br />
+今の私の設定
+```
+$ cat ~/.ctags
+
+  --recurse=yes
+```
+
+---
+
+インデックスファイル生成コマンド例
+```
+hogeプロジェクト配下を再帰読み込み、hoge.tagsインデックスを生成。
+```
+- - -
+<font size="5">
+    プロジェクト規模によりますが、数分以内には完了します。
+</font>
+```
+$ ctags --languages=php -f /output/path/hoge.tags /project/path/hoge
+```
+
+---
+
+インデックスファイル(タグファイル)
+- - -
+コマンドを実行するとこんなのができています。
+<center>
+    ![インデックスファイル例](https://kazuakim.github.io/img/tags01.png)
+</center>
+
+---
+
+e.g. Vim.
+- - -
+<center>
+    ![使用例](https://kazuakim.github.io/img/tags04.gif)
+</center>
+                    </script>
+                </section>
+                <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n"
+                    data-background="https://kazuakim.github.io/img/tags02.png"
+                    data-background-size="700px">
+                    <script type="text/template">
+ctagsとの比較画像
+- - -
+                    </script>
+                </section>
+                <section data-markdown data-separator="\n---\n$" data-vertical="\n--\n">
+                    <script type="text/template">
+まとめ
+- - -
+## 動作が軽快!!
+## 構造解析が優秀。
+## かなり便利。
+
+---
+
+ご清聴ありがとうございました。
+                    </script>
+                </section>
+            </div>
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                history: true,
+                slideNumber: true,
+                transition: "concave",
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    {
+                        src: 'plugin/markdown/marked.js'
+                    },
+                    {
+                        src: 'plugin/markdown/markdown.js'
+                    },
+                    {
+                        src: 'plugin/notes/notes.js',
+                        async: true
+                    },
+                    {
+                        src: 'plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function() {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }
+                ]
+            });
+
+            Reveal.addEventListener("slidechanged", function(event) {
+                if ([0, 2, 5].indexOf(Reveal.getState().indexh) >= 0) {
+                    Reveal.configure({
+                        center: true
+                    });
+                } else {
+                    Reveal.configure({
+                        center: false
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
