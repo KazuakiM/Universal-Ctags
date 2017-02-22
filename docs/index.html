@@ -58,6 +58,7 @@ PHP BLT #6
 * Twitter: [KazuakiM@NanohaAsOnKai](https://twitter.com/NanohaAsOnKai)
 * GitHub: [KazuakiM](https://github.com/KazuakiM)
 * Jobs: Web application engineer
+* Cluster: PHP, MySQL, Vim
 * kwsk: [ここをクリック](https://kazuakim.github.io/aboutme/)
 
 ---
@@ -116,11 +117,27 @@ $ brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 ---
 
-設定ファイル例
+昔の設定ファイル例
+- - -
+.gitとか一部判定処理に不満が...。
+
+```
+$ cat ~/.ctags
+
+  --exclude=.git
+  --exclude=.svn
+  --sort=yes
+  --langmap=PHP:+.inc.tpl
+  --regex-PHP=/const\s+([^ \t=]+)/\1/d/
+  --php-kinds=cfd
+```
+
+---
+
+今の設定ファイル例
 - - -
 ctagsでは多々設定が必要でしたが、  
 Universal Ctagsならほぼ不要です。
-<br />
 <br />
 今の私の設定
 ```
@@ -128,6 +145,17 @@ $ cat ~/.ctags
 
   --recurse=yes
   --langmap=PHP:+.php.inc.tpl
+```
+
+---
+
+今の設定ファイル例
+- - -
+この状態で対象となっているPHPファイル
+```
+$ ctags --list-maps
+
+PHP      *.php3 *.php4 *.php5 *.php7 *.phtml *.php *.inc *.tpl
 ```
 
 ---
@@ -219,7 +247,7 @@ e.g. Vim.
             });
 
             Reveal.addEventListener("slidechanged", function(event) {
-                if ([0, 2, 5, 13].indexOf(Reveal.getState().indexh) >= 0) {
+                if ([0, 2, 5, 15].indexOf(Reveal.getState().indexh) >= 0) {
                     Reveal.configure({
                         center: true
                     });
